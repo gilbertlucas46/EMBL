@@ -17,6 +17,7 @@ import {
 import { makeStyles } from "@mui/styles";
 import style from "@/app/components/Sheets/sheets.module.scss";
 import { ImPlus, ImMinus } from "react-icons/im";
+import { RowProps, SheetProps } from "@/lib/types";
 
 const useRowStyles = makeStyles({
   root: {
@@ -25,18 +26,6 @@ const useRowStyles = makeStyles({
     },
   },
 });
-
-interface RowData {
-  target: {
-    approvedSymbol: string;
-    approvedName: string;
-  };
-  score: number;
-}
-
-interface RowProps {
-  row: RowData;
-}
 
 function Row({ row }: RowProps) {
   const { target, score } = row;
@@ -75,14 +64,6 @@ function Row({ row }: RowProps) {
       </TableRow>
     </>
   );
-}
-
-interface SheetProps {
-  data: {
-    associatedTargets: {
-      rows: RowData[];
-    };
-  };
 }
 
 const Sheet: React.FC<SheetProps> = ({ data }) => {
