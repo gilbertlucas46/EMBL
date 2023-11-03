@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <main className="container">
-      <Sheets />
+      <Sheets data={data.disease} />
     </main>
   );
 }
