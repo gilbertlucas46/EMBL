@@ -35,6 +35,8 @@ yarn-error.log*
 next-env.d.ts
 
 # Ignore environment-specific .env files
-.env.local
 .env.staging
 .env.production
+
+# allowed
+!.env.local

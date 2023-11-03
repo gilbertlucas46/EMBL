@@ -5,6 +5,7 @@ import { ImPlus, ImMinus } from "react-icons/im";
 import { RowProps } from "@/lib/types";
 import { makeStyles } from "@mui/styles";
 import { Box, Collapse, IconButton, TableCell, TableRow } from "@mui/material";
+import RowTabs from "@/app/components/RowTabs/RowTabs";
 
 const useRowStyles = makeStyles({
   root: {
@@ -41,10 +42,7 @@ const Row = ({ row }: RowProps) => {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              suscipit vero iste officia, necessitatibus aut ullam aspernatur
-              nisi fuga non eos tempora iure voluptas, consequatur porro
-              perferendis sint blanditiis impedit.
+              <RowTabs />
             </Box>
           </Collapse>
         </TableCell>
