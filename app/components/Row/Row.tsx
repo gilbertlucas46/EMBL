@@ -16,7 +16,7 @@ const useRowStyles = makeStyles({
 });
 
 const Row = ({ row }: RowProps) => {
-  const { target, score } = row;
+  const { target, score, datatypeScores } = row;
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
 
@@ -42,7 +42,7 @@ const Row = ({ row }: RowProps) => {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <RowTabs />
+              <RowTabs datatypeScores={datatypeScores} />
             </Box>
           </Collapse>
         </TableCell>
