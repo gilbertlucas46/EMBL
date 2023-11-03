@@ -26,7 +26,19 @@ const useRowStyles = makeStyles({
   },
 });
 
-function Row({ row }) {
+interface RowData {
+  target: {
+    approvedSymbol: string;
+    approvedName: string;
+  };
+  score: number;
+}
+
+interface RowProps {
+  row: RowData;
+}
+
+function Row({ row }: RowProps) {
   const { target, score } = row;
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
@@ -64,7 +76,16 @@ function Row({ row }) {
     </>
   );
 }
-const Sheet = ({ data }) => {
+
+interface SheetProps {
+  data: {
+    associatedTargets: {
+      rows: RowData[];
+    };
+  };
+}
+
+const Sheet: React.FC<SheetProps> = ({ data }) => {
   const { rows: Rows } = data.associatedTargets;
   return (
     <div className={style.sheet}>
@@ -82,8 +103,8 @@ const Sheet = ({ data }) => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {Rows.map((row) => (
-                  <Row key={row.id} row={row} />
+                {Rows.map((row, index) => (
+                  <Row key={index} row={row} />
                 ))}
               </TableBody>
             </Table>
