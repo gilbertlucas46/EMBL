@@ -1,0 +1,40 @@
+{
+  "name": "project-open-targets-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest --watch",
+    "start:local": "NODE_ENV=development npm run dev",
+    "start:staging": "next build && NODE_ENV=staging next start",
+    "start:production": "next build && NODE_ENV=production next start"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.0-rc.2",
+    "@apollo/experimental-nextjs-app-support": "^0.0.0-commit-7dad495",
+    "@types/node": "^20.3.2",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "eslint": "8.47.0",
+    "eslint-config-next": "13.4.19",
+    "next": "13.4.7",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-use": "^17.4.0",
+    "typescript": "^5.1.5",
+    "use-context-menu": "^0.4.12"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "20.5.1",
+    "@types/react": "18.2.20",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1",
+    "sass": "^1.63.6"
+  }
+}
