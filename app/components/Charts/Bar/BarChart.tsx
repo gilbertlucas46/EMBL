@@ -7,6 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartOptions,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { DatatypeScores } from "@/lib/types";
@@ -42,9 +43,20 @@ const BarChart = ({
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"bar"> = {
     layout: {
       padding: 20,
+    },
+    scales: {
+      y: {
+        ticks: {
+          stepSize: 0.25,
+          callback: (value, values, ctx) => {
+            const numericValue = value as number;
+            return numericValue.toFixed(3);
+          },
+        },
+      },
     },
     plugins: {
       title: {
@@ -59,7 +71,7 @@ const BarChart = ({
   };
   return (
     <>
-      <div className={style.chartTitle}>{chartTitle}</div>
+      <span className={style.chartTitle}>{chartTitle}</span>
       <Bar data={data} options={options} />
     </>
   );

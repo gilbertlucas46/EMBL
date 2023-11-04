@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   plugins,
+  ChartOptions,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 import { DatatypeScores } from "@/lib/types";
@@ -45,23 +46,22 @@ const RadarChart = ({
     ],
   };
 
-  const options = {
+  const options: ChartOptions<"radar"> = {
     scales: {
-      // <-- note change in options from scale to scales
       r: {
         grid: {
           circular: true,
         },
-        beginatzero: true,
+        max: 1,
+        ticks: {
+          // NOTE: 💁 Unfortunately in chartjs as zero(0) is the lowest value
+          // it is skipped so it starts at 0.25
+          stepSize: 0.25,
+          format: { maximumFractionDigits: 3, minimumFractionDigits: 3 },
+        },
       },
     },
     plugins: {
-      // title: {
-      //   display: true,
-      //   text: ``,
-      //   position: `top`,
-      //   align: `left`,
-      // },
       legend: {
         display: false,
       },
@@ -70,7 +70,7 @@ const RadarChart = ({
 
   return (
     <>
-      <div className={style.chartTitle}>{chartTitle}</div>
+      <span className={style.chartTitle}>{chartTitle}</span>
       <Radar data={data} options={options} />
     </>
   );
