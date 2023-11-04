@@ -1,6 +1,6 @@
 .sheet {
   padding: 80px 0;
-  
+
   h1 {
     color: var(--gray);
     font-size: 38px;
@@ -10,6 +10,20 @@
   }
   .sheetWrapper {
     box-shadow: var(--boxShadowLight);
+  }
+  .tab {
+    min-height: 36px;
+    padding: 8px 16px;
+    &[aria-selected="true"] {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+    &s {
+        min-height: 36px;
+    }
+  }
+  .tableCell {
+    padding: 8px 16px;
   }
   .chartTitle {
     font-size: 18px;
@@ -31,45 +45,43 @@
     padding: 0;
     background-color: var(--blue);
     button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        svg {
-            fill: var(--white);
-        }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      svg {
+        fill: var(--white);
+      }
     }
   }
- 
+
   .MuiCollapse-root.MuiCollapse-vertical {
     border-top: 1px solid var(--tableBorder);
-}
+  }
   thead {
     tr {
-        th {
-            border: 1px solid var(--tableBorder);
-            font-weight: 700;
-            font-family: var(--font);
-        }
+      th {
+        border: 1px solid var(--tableBorder);
+        font-weight: 700;
+        font-family: var(--font);
+      }
     }
   }
 
   tbody {
     tr {
-        border: 0;
-        td {
-           &.MuiTableCell-root {
-            padding: 0;
-           }
+      border: 0;
+      td {
+        &.MuiTableCell-root {
+          padding: 0;
         }
-        td, th {
-            border-left: 1px solid var(--tableBorder);
-            margin-bottom: unset;
-        }
+      }
+      td,
+      th {
+        border-left: 1px solid var(--tableBorder);
+        margin-bottom: unset;
+      }
     }
   }
-  .Mui-selected {
-    background-color:var(--blue);
-    color: var(--white);
-  }
+  
 }

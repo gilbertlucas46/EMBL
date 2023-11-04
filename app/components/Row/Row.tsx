@@ -51,13 +51,17 @@ const Row = ({ row }: RowProps) => {
             } */}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
+        <TableCell className={style["tableCell"]} component="th" scope="row">
           <a href={linkTo} target="_blank">
             {target.approvedSymbol}
           </a>
         </TableCell>
-        <TableCell align="left">{target.approvedName}</TableCell>
-        <TableCell align="left">{formattedScore}</TableCell>
+        <TableCell className={style["tableCell"]} align="left">
+          {target.approvedName}
+        </TableCell>
+        <TableCell className={style["tableCell"]} align="left">
+          {formattedScore}
+        </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ padding: 0 }} colSpan={6}>

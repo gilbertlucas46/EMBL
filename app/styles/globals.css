@@ -45,24 +45,3 @@ a {
     padding: 0 80px;
   }
 }
-.MuiCollapse-root.MuiCollapse-vertical {
-    border-top: 1px solid var(--tableBorder);
-}
-.MuiTab-root.Mui-selected{
-  background-color:var(--blue);
-  color: var(--white);
-}
-.MuiTabs-indicator {
-  background-color: var(--blue);
-}
-.MuiTab-root {
-  text-transform: none;
-  min-height: 36px;
-  padding: 8px 16px;
-}
-.MuiTabs-root {
-  min-height: 36px;
-}
-.MuiTableCell-root {
-  padding: 8px 16px;
-}

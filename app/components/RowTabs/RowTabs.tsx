@@ -69,11 +69,21 @@ function RowTabs({
           <Tabs
             value={value}
             onChange={handleChange}
-            aria-label="basic tabs example"
+            aria-label="Basic tabs"
             className={style.tabs}
           >
-            <Tab className={style.tab} label="Bar chart" {...a11yProps(0)} />
-            <Tab className={style.tab} label="Radar chart" {...a11yProps(1)} />
+            <Tab
+              color="primary"
+              className={style.tab}
+              label="Bar chart"
+              {...a11yProps(0)}
+            />
+            <Tab
+              color="primary"
+              className={style.tab}
+              label="Radar chart"
+              {...a11yProps(1)}
+            />
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
