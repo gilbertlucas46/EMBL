@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 import { DatatypeScores, Target } from "@/lib/types";
 import BarChart from "../Charts/Bar/BarChart";
 import RadarChart from "../Charts/Radar/RadarChart";
+import style from "@/app/components/Sheets/sheets.module.scss";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -26,7 +27,7 @@ function CustomTabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ width: "100%", padding: "0" }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -63,15 +64,16 @@ function RowTabs({
 
   return (
     <div>
-      <Box sx={{ width: "100%" }}>
+      <Box sx={{ width: "100%", padding: "30px" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
+            className={style.tabs}
           >
-            <Tab label="Bar chart" {...a11yProps(0)} />
-            <Tab label="Radar chart" {...a11yProps(1)} />
+            <Tab className={style.tab} label="Bar chart" {...a11yProps(0)} />
+            <Tab className={style.tab} label="Radar chart" {...a11yProps(1)} />
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>

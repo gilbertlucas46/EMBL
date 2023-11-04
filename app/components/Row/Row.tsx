@@ -59,9 +59,9 @@ const Row = ({ row }: RowProps) => {
         <TableCell align="left">{formattedScore}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <TableCell style={{ padding: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={1}>
+            <Box>
               <RowTabs datatypeScores={datatypeScores} target={target} />
             </Box>
           </Collapse>

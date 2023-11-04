@@ -1,12 +1,18 @@
 :root {
   --max-width: 1298px;
   --font:  'Inter', sans-serif;
-  --gray: rgba(59,69,78,1.00);
+  --gray: #5a5f5f;
+  --tableBorder: rgba(224, 224, 224, 1);
   --boxShadowLight: inset 0px 0px 0px 1px #e3e8ed;
   --blueDark: rgb(8, 81, 156);
-  --blue: #609fd3;
+  --blue: #3389ca;
   --blueLight: rgb(158, 202, 225);
   --blueLigter: rgb(198, 219, 239);
+  --white: #ffff;
+}
+
+html,body,h1,h2,h3,h5,h5,main,span,div,ul,li,a,button,section {
+  font-family: var(--font);
 }
 
 * {
@@ -21,6 +27,7 @@ body {
 }
 
 body {
+
 }
 
 a {
@@ -37,4 +44,21 @@ a {
   .container {
     padding: 0 80px;
   }
+}
+.MuiCollapse-root.MuiCollapse-vertical {
+    border-top: 1px solid var(--tableBorder);
+}
+.MuiTab-root.Mui-selected{
+  background-color:var(--blue);
+  color: var(--white);
+}
+.MuiTabs-indicator {
+  background-color: var(--blue);
+}
+.MuiTab-root {
+  text-transform: none;
+  min-height: 38px;
+}
+.MuiTabs-root {
+  min-height: 38px;
 }
