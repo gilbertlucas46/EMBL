@@ -5,8 +5,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { DatatypeScores, RowData } from "@/lib/types";
-
+import { DatatypeScores } from "@/lib/types";
+import BarChart from "../Charts/Bar/BarChart";
+import RadarChart from "../Charts/Radar/RadarChart";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -54,10 +55,10 @@ function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores }) {
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          Bar chart
+          <BarChart />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          Radar chart
+          <RadarChart />
         </CustomTabPanel>
       </Box>
     </div>
