@@ -7,6 +7,7 @@ import {
   Filler,
   Tooltip,
   Legend,
+  plugins,
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 import { DatatypeScores } from "@/lib/types";
@@ -17,13 +18,16 @@ ChartJS.register(
   LineElement,
   Filler,
   Tooltip,
-  Legend
+  Legend,
+  plugins
 );
 
 const RadarChart = ({
   datatypeScores,
+  title,
 }: {
   datatypeScores: DatatypeScores[];
+  title: string;
 }) => {
   const labels = datatypeScores.map((item) => item.id);
   const scores = datatypeScores.map((item) => item.score);
@@ -31,7 +35,6 @@ const RadarChart = ({
     labels: labels,
     datasets: [
       {
-        label: "# of Votes",
         data: scores,
         backgroundColor: "rgba(255, 255, 255, 0)",
         borderColor: "#609fd3",
@@ -48,6 +51,17 @@ const RadarChart = ({
           circular: true,
         },
         beginatzero: true,
+      },
+    },
+    plugins: {
+      // title: {
+      //   display: true,
+      //   text: `Data Type Scores: ${title} and lung carcinoma`,
+      //   position: `top`,
+      //   align: `left`,
+      // },
+      legend: {
+        display: false,
       },
     },
   };

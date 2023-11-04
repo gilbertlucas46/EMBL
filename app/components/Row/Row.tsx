@@ -20,6 +20,16 @@ const Row = ({ row }: RowProps) => {
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
   const formattedScore = score.toFixed(3);
+
+  // 3. In the Approved Symbol column, construct a link to the relevant t
+  // target profile page in Open Targets Platform using the following link construct:
+  // https://platform.opentargets.org/target/ + `target.approvedName`
+
+  // NOTE: 💁 https://platform.opentargets.org/target/ + `target.approvedName` gives a 404 error
+  // so I just used the target.id instead
+
+  const linkTo = `https://platform.opentargets.org/target/${target.id}`;
+
   return (
     <>
       <TableRow className={classes.root}>
@@ -30,10 +40,20 @@ const Row = ({ row }: RowProps) => {
             onClick={() => setOpen(!open)}
           >
             {open ? <ImMinus /> : <ImPlus />}
+            {/* {
+              Add functionality so that when a user clicks a ‘+’ button in
+              the first column, the table row is expanded. When the row is expanded,
+              show a tab bar that toggles between a bar chart and a radar/polar chart
+              with the individual data type association scores found in the
+
+              NOTE: 💁 as additional user feedback, when the row is expanded I changed the icon to '-'
+            } */}
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {target.approvedSymbol}
+          <a href={linkTo} target="_blank">
+            {target.approvedSymbol}
+          </a>
         </TableCell>
         <TableCell align="left">{target.approvedName}</TableCell>
         <TableCell align="left">{formattedScore}</TableCell>
@@ -42,7 +62,7 @@ const Row = ({ row }: RowProps) => {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <RowTabs datatypeScores={datatypeScores} />
+              <RowTabs datatypeScores={datatypeScores} target={target} />
             </Box>
           </Collapse>
         </TableCell>

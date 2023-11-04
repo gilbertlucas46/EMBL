@@ -5,7 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { DatatypeScores } from "@/lib/types";
+import { DatatypeScores, Target } from "@/lib/types";
 import BarChart from "../Charts/Bar/BarChart";
 import RadarChart from "../Charts/Radar/RadarChart";
 interface TabPanelProps {
@@ -34,7 +34,13 @@ function CustomTabPanel(props: TabPanelProps) {
   );
 }
 
-function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores[] }) {
+function RowTabs({
+  datatypeScores,
+  target,
+}: {
+  datatypeScores: DatatypeScores[];
+  target: Target;
+}) {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -58,7 +64,10 @@ function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores[] }) {
           <BarChart />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <RadarChart datatypeScores={datatypeScores} />
+          <RadarChart
+            datatypeScores={datatypeScores}
+            title={target.approvedSymbol}
+          />
         </CustomTabPanel>
       </Box>
     </div>
