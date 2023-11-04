@@ -31,6 +31,7 @@ const RadarChart = ({
 }) => {
   const labels = datatypeScores.map((item) => item.id);
   const scores = datatypeScores.map((item) => item.score);
+  const chartTitle = `Data Type Scores: ${title} and lung carcinoma`;
   const data = {
     labels: labels,
     datasets: [
@@ -56,7 +57,7 @@ const RadarChart = ({
     plugins: {
       // title: {
       //   display: true,
-      //   text: `Data Type Scores: ${title} and lung carcinoma`,
+      //   text: ``,
       //   position: `top`,
       //   align: `left`,
       // },
@@ -66,7 +67,12 @@ const RadarChart = ({
     },
   };
 
-  return <Radar data={data} options={options} />;
+  return (
+    <>
+      <h5>{chartTitle}</h5>
+      <Radar data={data} options={options} />
+    </>
+  );
 };
 
 export default RadarChart;
