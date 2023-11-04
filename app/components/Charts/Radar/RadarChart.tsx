@@ -11,6 +11,7 @@ import {
 } from "chart.js";
 import { Radar } from "react-chartjs-2";
 import { DatatypeScores } from "@/lib/types";
+import style from "@/app/components/Sheets/sheets.module.scss";
 
 ChartJS.register(
   RadialLinearScale,
@@ -69,7 +70,7 @@ const RadarChart = ({
 
   return (
     <>
-      <h5>{chartTitle}</h5>
+      <div className={style.chartTitle}>{chartTitle}</div>
       <Radar data={data} options={options} />
     </>
   );

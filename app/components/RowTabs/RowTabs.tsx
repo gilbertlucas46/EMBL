@@ -61,7 +61,10 @@ function RowTabs({
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <BarChart />
+          <BarChart
+            datatypeScores={datatypeScores}
+            title={target.approvedSymbol}
+          />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           <RadarChart
