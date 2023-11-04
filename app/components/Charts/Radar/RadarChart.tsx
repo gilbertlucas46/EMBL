@@ -60,7 +60,11 @@ const RadarChart = ({ data, title }: { data: ChartData; title: string }) => {
   return (
     <>
       <span className={style.chartTitle}>{title}</span>
-      <Radar data={radarData} options={options} />
+      <Radar
+        className={style["RadarchartBox"]}
+        data={radarData}
+        options={options}
+      />
     </>
   );
 };

@@ -12,10 +12,19 @@
     box-shadow: var(--boxShadowLight);
   }
   .chartTitle {
-    font-size: 26px;
+    font-size: 18px;
     color: var(--gray);
     margin-top: 24px;
     display: block;
+  }
+  .BarchartBox {
+    max-width: 900px;
+    margin: auto;
+  }
+  .RadarchartBox {
+    max-width: 700px;
+    max-height: 700px;
+    margin: auto;
   }
  
   .MuiCollapse-root.MuiCollapse-vertical {
