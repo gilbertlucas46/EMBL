@@ -50,10 +50,10 @@ const BarChart = ({ data, title }: { data: ChartData; title: string }) => {
     },
   };
   return (
-    <div>
+    <>
       <span className={style.chartTitle}>{title}</span>
       <Bar className={style["BarchartBox"]} data={data} options={options} />
-    </div>
+    </>
   );
 };
 

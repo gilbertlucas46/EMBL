@@ -43,7 +43,21 @@ function RowTabs({
   target: Target;
 }) {
   const [value, setValue] = useState(0);
-  const labels = datatypeScores.map((item) => item.id);
+  const labels = datatypeScores.map((item) => {
+    // 6. Format the chart labels to remove the underscores
+    // and capitalise each word in the data type label.
+    const formattedLabel = item.id
+      .split("_")
+      .map((word) =>
+        word === "rna"
+          ? word.toUpperCase()
+          : word.charAt(0).toUpperCase() + word.slice(1)
+      )
+      .join(" ");
+
+    return formattedLabel;
+  });
+
   const scores = datatypeScores.map((item) => item.score);
   const chartTitle = `Data Type Scores: ${target.approvedSymbol} and lung carcinoma`;
 
