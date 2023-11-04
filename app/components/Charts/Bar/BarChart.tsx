@@ -10,7 +10,7 @@ import {
   ChartOptions,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { DatatypeScores } from "@/lib/types";
+import { ChartData } from "@/lib/types";
 import style from "@/app/components/Sheets/sheets.module.scss";
 
 ChartJS.register(
@@ -22,27 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = ({
-  datatypeScores,
-  title,
-}: {
-  datatypeScores: DatatypeScores[];
-  title: string;
-}) => {
-  const labels = datatypeScores.map((item) => item.id);
-  const scores = datatypeScores.map((item) => item.score);
-  const chartTitle = `Data Type Scores: ${title} and lung carcinoma`;
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        data: scores,
-        backgroundColor: "#609fd3",
-        borderWidth: 1,
-      },
-    ],
-  };
-
+const BarChart = ({ data, title }: { data: ChartData; title: string }) => {
   const options: ChartOptions<"bar"> = {
     layout: {
       padding: 20,
@@ -71,7 +51,7 @@ const BarChart = ({
   };
   return (
     <>
-      <span className={style.chartTitle}>{chartTitle}</span>
+      <span className={style.chartTitle}>{title}</span>
       <Bar data={data} options={options} />
     </>
   );

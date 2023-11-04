@@ -29,3 +29,14 @@ export interface RowProps {
 export interface SheetProps {
   data: SheetData;
 }
+
+export interface ChartData {
+  labels: string[];
+  datasets: ChartDataset[];
+}
+
+export interface ChartDataset {
+  data: number[]; // or string[] if your data is represented as strings
+  backgroundColor: string;
+  borderWidth: number;
+}

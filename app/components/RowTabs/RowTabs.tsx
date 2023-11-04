@@ -42,6 +42,20 @@ function RowTabs({
   target: Target;
 }) {
   const [value, setValue] = useState(0);
+  const labels = datatypeScores.map((item) => item.id);
+  const scores = datatypeScores.map((item) => item.score);
+  const chartTitle = `Data Type Scores: ${target.approvedSymbol} and lung carcinoma`;
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        data: scores,
+        backgroundColor: "#609fd3",
+        borderWidth: 1,
+      },
+    ],
+  };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -61,16 +75,10 @@ function RowTabs({
           </Tabs>
         </Box>
         <CustomTabPanel value={value} index={0}>
-          <BarChart
-            datatypeScores={datatypeScores}
-            title={target.approvedSymbol}
-          />
+          <BarChart data={data} title={chartTitle} />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <RadarChart
-            datatypeScores={datatypeScores}
-            title={target.approvedSymbol}
-          />
+          <RadarChart data={data} title={chartTitle} />
         </CustomTabPanel>
       </Box>
     </div>
