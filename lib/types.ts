@@ -1,4 +1,5 @@
 export interface Target {
+  id: string;
   approvedSymbol: string;
   approvedName: string;
 }

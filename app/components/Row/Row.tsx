@@ -28,7 +28,6 @@ const Row = ({ row }: RowProps) => {
 
   // NOTE: 💁 https://platform.opentargets.org/target/ + `target.approvedName` gives a 404 error
   // so I just used the target.id instead
-
   const linkTo = `https://platform.opentargets.org/target/${target.id}`;
 
   return (
