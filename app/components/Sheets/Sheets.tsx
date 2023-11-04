@@ -23,10 +23,16 @@ const Sheet: React.FC<SheetProps> = ({ data }) => {
             <Table aria-label="collapsible table">
               <TableHead>
                 <TableRow>
-                  <TableCell />
-                  <TableCell align="left">Approved Symbol</TableCell>
-                  <TableCell align="left">Gene Name</TableCell>
-                  <TableCell align="left">Overall Association Score</TableCell>
+                  <TableCell className={style["tableCell"]} />
+                  <TableCell className={style["tableCell"]} align="left">
+                    Approved Symbol
+                  </TableCell>
+                  <TableCell className={style["tableCell"]} align="left">
+                    Gene Name
+                  </TableCell>
+                  <TableCell className={style["tableCell"]} align="left">
+                    Overall Association Score
+                  </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>

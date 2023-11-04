@@ -25,6 +25,9 @@
   }
   .tableCell {
     padding: 8px 16px;
+    a {
+        color: var(--blue);
+    }
   }
   .chartTitle {
     font-size: 18px;
