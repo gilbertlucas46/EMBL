@@ -41,6 +41,7 @@ const RadarChart = ({ data, title }: { data: ChartData; title: string }) => {
         grid: {
           circular: true,
         },
+        min: 0,
         max: 1,
         ticks: {
           // NOTE: 💁 Unfortunately in chartjs as zero(0) is the lowest value
