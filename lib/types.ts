@@ -11,7 +11,7 @@ export interface DatatypeScores {
 export interface RowData {
   target: Target;
   score: number;
-  datatypeScores: DatatypeScores;
+  datatypeScores: DatatypeScores[]; // Use an array for datatypeScores
 }
 
 export interface AssociatedTargetsData {

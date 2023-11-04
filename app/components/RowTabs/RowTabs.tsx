@@ -34,7 +34,7 @@ function CustomTabPanel(props: TabPanelProps) {
   );
 }
 
-function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores }) {
+function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores[] }) {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -58,7 +58,7 @@ function RowTabs({ datatypeScores }: { datatypeScores: DatatypeScores }) {
           <BarChart />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
-          <RadarChart />
+          <RadarChart datatypeScores={datatypeScores} />
         </CustomTabPanel>
       </Box>
     </div>

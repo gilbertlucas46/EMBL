@@ -3,6 +3,10 @@
   --font:  'Inter', sans-serif;
   --gray: rgba(59,69,78,1.00);
   --boxShadowLight: inset 0px 0px 0px 1px #e3e8ed;
+  --blueDark: rgb(8, 81, 156);
+  --blue: #609fd3;
+  --blueLight: rgb(158, 202, 225);
+  --blueLigter: rgb(198, 219, 239);
 }
 
 * {
