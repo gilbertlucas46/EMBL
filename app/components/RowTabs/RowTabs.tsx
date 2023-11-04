@@ -64,7 +64,7 @@ function RowTabs({
 
   return (
     <div>
-      <Box sx={{ width: "100%", padding: "30px" }}>
+      <Box sx={{ width: "100%", padding: "16px" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             value={value}

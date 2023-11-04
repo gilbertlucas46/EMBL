@@ -26,6 +26,20 @@
     max-height: 700px;
     margin: auto;
   }
+
+  .tableToggleButton {
+    padding: 0;
+    background-color: var(--blue);
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        svg {
+            fill: var(--white);
+        }
+    }
+  }
  
   .MuiCollapse-root.MuiCollapse-vertical {
     border-top: 1px solid var(--tableBorder);

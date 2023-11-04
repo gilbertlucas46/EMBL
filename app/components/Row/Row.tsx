@@ -6,6 +6,7 @@ import { RowProps } from "@/lib/types";
 import { makeStyles } from "@mui/styles";
 import { Box, Collapse, IconButton, TableCell, TableRow } from "@mui/material";
 import RowTabs from "@/app/components/RowTabs/RowTabs";
+import style from "@/app/components/Sheets/sheets.module.scss";
 
 const useRowStyles = makeStyles({
   root: {
@@ -33,7 +34,7 @@ const Row = ({ row }: RowProps) => {
   return (
     <>
       <TableRow className={classes.root}>
-        <TableCell>
+        <TableCell className={style["tableToggleButton"]}>
           <IconButton
             aria-label="expand row"
             size="small"
