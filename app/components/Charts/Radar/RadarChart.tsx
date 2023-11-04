@@ -20,31 +20,19 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  scales: {
-    // <-- note change in options from scale to scales
-    r: {
-      grid: {
-        circular: true,
-      },
-      beginatzero: true,
-    },
-  },
-};
-
 const RadarChart = ({
   datatypeScores,
 }: {
   datatypeScores: DatatypeScores[];
 }) => {
   const labels = datatypeScores.map((item) => item.id);
-  const score = datatypeScores.map((item) => item.score);
+  const scores = datatypeScores.map((item) => item.score);
   const data = {
     labels: labels,
     datasets: [
       {
         label: "# of Votes",
-        data: score, // Example data, you can replace this with your actual data
+        data: scores,
         backgroundColor: "rgba(255, 255, 255, 0)",
         borderColor: "#609fd3",
         borderWidth: 1,
@@ -53,7 +41,15 @@ const RadarChart = ({
   };
 
   const options = {
-    // Add your chart options here
+    scales: {
+      // <-- note change in options from scale to scales
+      r: {
+        grid: {
+          circular: true,
+        },
+        beginatzero: true,
+      },
+    },
   };
 
   return <Radar data={data} options={options} />;

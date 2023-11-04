@@ -19,7 +19,7 @@ const Row = ({ row }: RowProps) => {
   const { target, score, datatypeScores } = row;
   const [open, setOpen] = useState(false);
   const classes = useRowStyles();
-
+  const formattedScore = score.toFixed(3);
   return (
     <>
       <TableRow className={classes.root}>
@@ -36,7 +36,7 @@ const Row = ({ row }: RowProps) => {
           {target.approvedSymbol}
         </TableCell>
         <TableCell align="left">{target.approvedName}</TableCell>
-        <TableCell align="left">{score}</TableCell>
+        <TableCell align="left">{formattedScore}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
