@@ -60,7 +60,7 @@ function RowTabs({
 
   const scores = datatypeScores.map((item) => item.score);
   const chartTitle = `Data Type Scores: ${target.approvedSymbol} and lung carcinoma`;
-
+  console.log(labels, scores);
   const data = {
     labels: labels,
     datasets: [
@@ -77,24 +77,24 @@ function RowTabs({
   };
 
   return (
-    <div>
+    <div className={style["tabsWrapper"]}>
       <Box sx={{ width: "100%", padding: "16px" }}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs
             value={value}
             onChange={handleChange}
             aria-label="Basic tabs"
-            className={style.tabs}
+            className={style["tabs"]}
           >
             <Tab
               color="primary"
-              className={style.tab}
+              className={style["tab"]}
               label="Bar chart"
               {...a11yProps(0)}
             />
             <Tab
               color="primary"
-              className={style.tab}
+              className={style["tab"]}
               label="Radar chart"
               {...a11yProps(1)}
             />

@@ -32,6 +32,7 @@ const RadarChart = ({ data, title }: { data: ChartData; title: string }) => {
       backgroundColor: "rgba(255, 255, 255, 0)",
       borderColor: "#609fd3",
       borderWidth: 2,
+      pointBackgroundColor: "#609fd3",
     })),
   };
 
@@ -43,11 +44,25 @@ const RadarChart = ({ data, title }: { data: ChartData; title: string }) => {
         },
         min: 0,
         max: 1,
+        pointLabels: {
+          display: true,
+          font: {
+            size: 12,
+            weight: "700",
+          },
+        },
         ticks: {
           // NOTE: 💁 Unfortunately in chartjs as zero(0) is the lowest value
           // it is skipped so it starts at 0.25
+          backdropPadding: 20,
           stepSize: 0.25,
-          format: { maximumFractionDigits: 3, minimumFractionDigits: 3 },
+          backdropColor: "transparent",
+          padding: 100,
+          callback: (value, values, ctx) => {
+            const numericValue = value as number;
+            return `${numericValue.toFixed(3)}             `;
+          },
+          // format: { maximumFractionDigits: 3, minimumFractionDigits: 3 },
         },
       },
     },

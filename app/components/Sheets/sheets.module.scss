@@ -7,6 +7,10 @@
     font-weight: 400;
     line-height: 48px;
     margin-bottom: 24px;
+    text-transform: capitalize;
+  }
+  .tabsWrapper {
+    border-top: 1px solid var(--tableBorder);
   }
   .sheetWrapper {
     box-shadow: var(--boxShadowLight);
@@ -15,6 +19,8 @@
     min-height: 36px;
     padding: 8px 16px;
     text-transform: none;
+    font-weight: 700;
+    font-size: 14px;
     &[aria-selected="true"] {
         background-color: var(--blue);
         color: var(--white);
@@ -24,7 +30,10 @@
     }
   }
   .tableCell {
-    padding: 8px 16px;
+    padding: 7px 16px;
+    font-family: var(--font);
+    color: var(--gray);
+    font-size: 14px;
     a {
         color: var(--blue);
     }
@@ -41,13 +50,15 @@
   }
   .RadarchartBox {
     max-width: 700px;
-    max-height: 700px;
+    max-height: 600px;
     margin: auto;
   }
 
   .tableToggleButton {
     padding: 0;
     background-color: var(--blue);
+    width: 36px;
+    height: 36px;
     button {
       display: flex;
       align-items: center;
