@@ -60,7 +60,7 @@ function RowTabs({
 
   const scores = datatypeScores.map((item) => item.score);
   const chartTitle = `Data Type Scores: ${target.approvedSymbol} and lung carcinoma`;
-  console.log(labels, scores);
+
   const data = {
     labels: labels,
     datasets: [
