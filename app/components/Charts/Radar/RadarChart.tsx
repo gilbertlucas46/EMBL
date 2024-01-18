@@ -48,7 +48,7 @@ const RadarChart = ({ data, title }: { data: ChartData; title: string }) => {
           display: true,
           font: {
             size: 12,
-            weight: "700",
+            weight: 700,
           },
         },
         ticks: {
